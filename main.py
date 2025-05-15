@@ -53,7 +53,10 @@ def main():
         elif choice == "4":
             # Create policy using policy_builder
             policy = policy_builder.create_custom_policy()
-            
+        
+        elif choice == "5":
+            print("👋 Exiting the tool. Goodbye!")
+            sys.exit(0)
 
 
 if __name__ == "__main__":

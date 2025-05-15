@@ -1,0 +1,186 @@
+2025-05-14 13:37:55,859 - DEBUG - Event choose-service-name: calling handler <function handle_service_name_alias at 0x000001E402D027A0>
+2025-05-14 13:37:55,861 - DEBUG - Event creating-client-class.iam: calling handler <function add_generate_presigned_url at 0x000001E402C46B60>
+2025-05-14 13:37:55,861 - DEBUG - Looking for endpoint for iam via: environment_service
+2025-05-14 13:37:55,862 - DEBUG - Looking for endpoint for iam via: environment_global
+2025-05-14 13:37:55,862 - DEBUG - Looking for endpoint for iam via: config_service
+2025-05-14 13:37:55,862 - DEBUG - Looking for endpoint for iam via: config_global
+2025-05-14 13:37:55,869 - DEBUG - No configured endpoint found.
+2025-05-14 13:37:55,873 - DEBUG - Setting iam timeout as (60, 60)
+2025-05-14 13:37:55,875 - DEBUG - Registering retry handlers for service: iam
+2025-05-14 13:38:15,329 - DEBUG - Event before-parameter-build.iam.GetUser: calling handler <function generate_idempotent_uuid at 0x000001E402D039C0>
+2025-05-14 13:38:15,336 - DEBUG - Event before-parameter-build.iam.GetUser: calling handler <function _handle_request_validation_mode_member at 0x000001E402D265C0>
+2025-05-14 13:38:15,338 - DEBUG - Calling endpoint provider with parameters: {'UseDualStack': False, 'UseFIPS': False, 'Region': 'aws-global'}
+2025-05-14 13:38:15,340 - DEBUG - Endpoint provider result: https://iam.amazonaws.com
+2025-05-14 13:38:15,340 - DEBUG - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2025-05-14 13:38:15,341 - DEBUG - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1'}
+2025-05-14 13:38:15,342 - DEBUG - Event before-call.iam.GetUser: calling handler <function add_recursion_detection_header at 0x000001E402D03560>
+2025-05-14 13:38:15,342 - DEBUG - Event before-call.iam.GetUser: calling handler <function add_query_compatibility_header at 0x000001E402D26520>
+2025-05-14 13:38:15,343 - DEBUG - Event before-call.iam.GetUser: calling handler <function inject_api_version_header_if_needed at 0x000001E402D254E0>
+2025-05-14 13:38:15,344 - DEBUG - Making request for OperationModel(name=GetUser) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.38.14 md/Botocore#1.38.14 ua/2.1 os/windows#11 md/arch#amd64 lang/python#3.13.3 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.38.14'}, 'body': {'Action': 'GetUser', 'Version': '2010-05-08', 'UserName': 'Rahul'}, 'url': 'https://iam.amazonaws.com/', 'context': {'client_region': 'aws-global', 'client_config': <botocore.config.Config object at 0x000001E402DD7620>, 'has_streaming_input': False, 'auth_type': 'v4', 'unsigned_payload': None, 'signing': {'region': 'us-east-1'}, 'endpoint_properties': {'authSchemes': [{'name': 'sigv4', 'signingRegion': 'us-east-1'}]}}}
+2025-05-14 13:38:15,344 - DEBUG - Event request-created.iam.GetUser: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000001E402DD74D0>>
+2025-05-14 13:38:15,345 - DEBUG - Event choose-signer.iam.GetUser: calling handler <function set_operation_specific_signer at 0x000001E402D037E0>
+2025-05-14 13:38:15,347 - DEBUG - Calculating signature using v4 auth.
+2025-05-14 13:38:15,347 - DEBUG - CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:iam.amazonaws.com
+x-amz-date:20250514T080815Z
+
+content-type;host;x-amz-date
+892489e5941cca88d978e7f3e44528573a87b6d037f570b74be111ccf8d9a1e3
+2025-05-14 13:38:15,348 - DEBUG - StringToSign:
+AWS4-HMAC-SHA256
+20250514T080815Z
+20250514/us-east-1/iam/aws4_request
+76cbab04c1252fbc227865f343283ec94957a8f6887007c57d0e534df85210fb
+2025-05-14 13:38:15,350 - DEBUG - Signature:
+e7f148ac9f88085ddc998137d14d612353793105630b643b13f392d3726c3291
+2025-05-14 13:38:15,351 - DEBUG - Event request-created.iam.GetUser: calling handler <bound method UserAgentString.rebuild_and_replace_user_agent_handler of <botocore.useragent.UserAgentString object at 0x000001E4036D02D0>>
+2025-05-14 13:38:15,352 - DEBUG - Event request-created.iam.GetUser: calling handler <function add_retry_headers at 0x000001E402D25DA0>
+2025-05-14 13:38:15,353 - DEBUG - Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://iam.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.38.14 md/Botocore#1.38.14 ua/2.1 os/windows#11 md/arch#amd64 lang/python#3.13.3 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.38.14', 'X-Amz-Date': b'20250514T080815Z', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAVVG3FY32KJXVTZMW/20250514/us-east-1/iam/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature=e7f148ac9f88085ddc998137d14d612353793105630b643b13f392d3726c3291', 'amz-sdk-invocation-id': b'4286474b-f7b7-4a6a-bbdb-b92dd4deb696', 'amz-sdk-request': b'attempt=1', 'Content-Length': '48'}>
+2025-05-14 13:38:15,355 - DEBUG - Certificate path: C:\iam-access-control-project\.venv\Lib\site-packages\botocore\cacert.pem
+2025-05-14 13:38:15,356 - DEBUG - Starting new HTTPS connection (1): iam.amazonaws.com:443
+2025-05-14 13:38:20,190 - DEBUG - https://iam.amazonaws.com:443 "POST / HTTP/1.1" 404 285
+2025-05-14 13:38:20,191 - DEBUG - Response headers: {'Date': 'Wed, 14 May 2025 08:08:17 GMT', 'x-amzn-RequestId': '7b57270d-42f5-40b5-bc04-262eb55652ab', 'Content-Type': 'text/xml', 'Content-Length': '285'}
+2025-05-14 13:38:20,191 - DEBUG - Response body:
+b'<ErrorResponse xmlns="https://iam.amazonaws.com/doc/2010-05-08/">\n  <Error>\n    <Type>Sender</Type>\n    <Code>NoSuchEntity</Code>\n    <Message>The user with name Rahul cannot be found.</Message>\n  </Error>\n  <RequestId>7b57270d-42f5-40b5-bc04-262eb55652ab</RequestId>\n</ErrorResponse>\n'
+2025-05-14 13:38:20,197 - DEBUG - Response headers: {'Date': 'Wed, 14 May 2025 08:08:17 GMT', 'x-amzn-RequestId': '7b57270d-42f5-40b5-bc04-262eb55652ab', 'Content-Type': 'text/xml', 'Content-Length': '285'}
+2025-05-14 13:38:20,198 - DEBUG - Response body:
+b'<ErrorResponse xmlns="https://iam.amazonaws.com/doc/2010-05-08/">\n  <Error>\n    <Type>Sender</Type>\n    <Code>NoSuchEntity</Code>\n    <Message>The user with name Rahul cannot be found.</Message>\n  </Error>\n  <RequestId>7b57270d-42f5-40b5-bc04-262eb55652ab</RequestId>\n</ErrorResponse>\n'
+2025-05-14 13:38:20,198 - DEBUG - Event needs-retry.iam.GetUser: calling handler <botocore.retryhandler.RetryHandler object at 0x000001E4036CD2B0>
+2025-05-14 13:38:20,198 - DEBUG - No retry needed.
+2025-05-14 13:38:20,199 - DEBUG - Event after-call.iam.GetUser: calling handler <function json_decode_policies at 0x000001E402D24680>
+2025-05-14 13:38:20,200 - DEBUG - Event before-parameter-build.iam.CreateUser: calling handler <function generate_idempotent_uuid at 0x000001E402D039C0>
+2025-05-14 13:38:20,201 - DEBUG - Event before-parameter-build.iam.CreateUser: calling handler <function _handle_request_validation_mode_member at 0x000001E402D265C0>
+2025-05-14 13:38:20,201 - DEBUG - Calling endpoint provider with parameters: {'UseDualStack': False, 'UseFIPS': False, 'Region': 'aws-global'}
+2025-05-14 13:38:20,201 - DEBUG - Endpoint provider result: https://iam.amazonaws.com
+2025-05-14 13:38:20,201 - DEBUG - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2025-05-14 13:38:20,201 - DEBUG - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1'}
+2025-05-14 13:38:20,202 - DEBUG - Event before-call.iam.CreateUser: calling handler <function add_recursion_detection_header at 0x000001E402D03560>
+2025-05-14 13:38:20,202 - DEBUG - Event before-call.iam.CreateUser: calling handler <function add_query_compatibility_header at 0x000001E402D26520>
+2025-05-14 13:38:20,202 - DEBUG - Event before-call.iam.CreateUser: calling handler <function inject_api_version_header_if_needed at 0x000001E402D254E0>
+2025-05-14 13:38:20,202 - DEBUG - Making request for OperationModel(name=CreateUser) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.38.14 md/Botocore#1.38.14 ua/2.1 os/windows#11 md/arch#amd64 lang/python#3.13.3 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.38.14'}, 'body': {'Action': 'CreateUser', 'Version': '2010-05-08', 'UserName': 'Rahul'}, 'url': 'https://iam.amazonaws.com/', 'context': {'client_region': 'aws-global', 'client_config': <botocore.config.Config object at 0x000001E402DD7620>, 'has_streaming_input': False, 'auth_type': 'v4', 'unsigned_payload': None, 'signing': {'region': 'us-east-1'}, 'endpoint_properties': {'authSchemes': [{'name': 'sigv4', 'signingRegion': 'us-east-1'}]}}}
+2025-05-14 13:38:20,203 - DEBUG - Event request-created.iam.CreateUser: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000001E402DD74D0>>
+2025-05-14 13:38:20,203 - DEBUG - Event choose-signer.iam.CreateUser: calling handler <function set_operation_specific_signer at 0x000001E402D037E0>
+2025-05-14 13:38:20,204 - DEBUG - Calculating signature using v4 auth.
+2025-05-14 13:38:20,204 - DEBUG - CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:iam.amazonaws.com
+x-amz-date:20250514T080820Z
+
+content-type;host;x-amz-date
+84957575eda1f9dfdb0a5060d27d3f7c30c8cace772f15d64edf1854ce136295
+2025-05-14 13:38:20,204 - DEBUG - StringToSign:
+AWS4-HMAC-SHA256
+20250514T080820Z
+20250514/us-east-1/iam/aws4_request
+d842df616172f4fca39de5af9f3ab907e10dfb192ae1db4d3735661aeca4c8eb
+2025-05-14 13:38:20,205 - DEBUG - Signature:
+fabc1f09f4e997a122db496f94658545a6846ac16d4faf5e45af6e44b7dd3866
+2025-05-14 13:38:20,205 - DEBUG - Event request-created.iam.CreateUser: calling handler <bound method UserAgentString.rebuild_and_replace_user_agent_handler of <botocore.useragent.UserAgentString object at 0x000001E4036D02D0>>
+2025-05-14 13:38:20,205 - DEBUG - Event request-created.iam.CreateUser: calling handler <function add_retry_headers at 0x000001E402D25DA0>
+2025-05-14 13:38:20,205 - DEBUG - Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://iam.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.38.14 md/Botocore#1.38.14 ua/2.1 os/windows#11 md/arch#amd64 lang/python#3.13.3 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.38.14', 'X-Amz-Date': b'20250514T080820Z', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAVVG3FY32KJXVTZMW/20250514/us-east-1/iam/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature=fabc1f09f4e997a122db496f94658545a6846ac16d4faf5e45af6e44b7dd3866', 'amz-sdk-invocation-id': b'6ad3a463-a841-44d2-a0a4-b72ed0d68219', 'amz-sdk-request': b'attempt=1', 'Content-Length': '51'}>
+2025-05-14 13:38:20,206 - DEBUG - Certificate path: C:\iam-access-control-project\.venv\Lib\site-packages\botocore\cacert.pem
+2025-05-14 13:38:21,049 - DEBUG - https://iam.amazonaws.com:443 "POST / HTTP/1.1" 200 471
+2025-05-14 13:38:21,050 - DEBUG - Response headers: {'Date': 'Wed, 14 May 2025 08:08:20 GMT', 'x-amzn-RequestId': 'eb789ff1-1b21-432f-bb3a-673bc8f22ef1', 'Content-Type': 'text/xml', 'Content-Length': '471'}
+2025-05-14 13:38:21,051 - DEBUG - Response body:
+b'<CreateUserResponse xmlns="https://iam.amazonaws.com/doc/2010-05-08/">\n  <CreateUserResult>\n    <User>\n      <Path>/</Path>\n      <UserName>Rahul</UserName>\n      <Arn>arn:aws:iam::389154195188:user/Rahul</Arn>\n      <UserId>AIDAVVG3FY32JXGZK2NBQ</UserId>\n      <CreateDate>2025-05-14T08:08:20Z</CreateDate>\n    </User>\n  </CreateUserResult>\n  <ResponseMetadata>\n    <RequestId>eb789ff1-1b21-432f-bb3a-673bc8f22ef1</RequestId>\n  </ResponseMetadata>\n</CreateUserResponse>\n'
+2025-05-14 13:38:21,056 - DEBUG - Event needs-retry.iam.CreateUser: calling handler <botocore.retryhandler.RetryHandler object at 0x000001E4036CD2B0>
+2025-05-14 13:38:21,056 - DEBUG - No retry needed.
+2025-05-14 13:38:21,056 - DEBUG - Event after-call.iam.CreateUser: calling handler <function json_decode_policies at 0x000001E402D24680>
+2025-05-14 13:38:21,057 - DEBUG - Event before-parameter-build.iam.AddUserToGroup: calling handler <function generate_idempotent_uuid at 0x000001E402D039C0>
+2025-05-14 13:38:21,058 - DEBUG - Event before-parameter-build.iam.AddUserToGroup: calling handler <function _handle_request_validation_mode_member at 0x000001E402D265C0>
+2025-05-14 13:38:21,058 - DEBUG - Calling endpoint provider with parameters: {'UseDualStack': False, 'UseFIPS': False, 'Region': 'aws-global'}
+2025-05-14 13:38:21,058 - DEBUG - Endpoint provider result: https://iam.amazonaws.com
+2025-05-14 13:38:21,058 - DEBUG - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2025-05-14 13:38:21,058 - DEBUG - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1'}
+2025-05-14 13:38:21,059 - DEBUG - Event before-call.iam.AddUserToGroup: calling handler <function add_recursion_detection_header at 0x000001E402D03560>
+2025-05-14 13:38:21,059 - DEBUG - Event before-call.iam.AddUserToGroup: calling handler <function add_query_compatibility_header at 0x000001E402D26520>
+2025-05-14 13:38:21,059 - DEBUG - Event before-call.iam.AddUserToGroup: calling handler <function inject_api_version_header_if_needed at 0x000001E402D254E0>
+2025-05-14 13:38:21,059 - DEBUG - Making request for OperationModel(name=AddUserToGroup) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.38.14 md/Botocore#1.38.14 ua/2.1 os/windows#11 md/arch#amd64 lang/python#3.13.3 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.38.14'}, 'body': {'Action': 'AddUserToGroup', 'Version': '2010-05-08', 'UserName': 'Rahul', 'GroupName': 'Developers'}, 'url': 'https://iam.amazonaws.com/', 'context': {'client_region': 'aws-global', 'client_config': <botocore.config.Config object at 0x000001E402DD7620>, 'has_streaming_input': False, 'auth_type': 'v4', 'unsigned_payload': None, 'signing': {'region': 'us-east-1'}, 'endpoint_properties': {'authSchemes': [{'name': 'sigv4', 'signingRegion': 'us-east-1'}]}}}
+2025-05-14 13:38:21,059 - DEBUG - Event request-created.iam.AddUserToGroup: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000001E402DD74D0>>
+2025-05-14 13:38:21,060 - DEBUG - Event choose-signer.iam.AddUserToGroup: calling handler <function set_operation_specific_signer at 0x000001E402D037E0>
+2025-05-14 13:38:21,060 - DEBUG - Calculating signature using v4 auth.
+2025-05-14 13:38:21,060 - DEBUG - CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:iam.amazonaws.com
+x-amz-date:20250514T080821Z
+
+content-type;host;x-amz-date
+3d0f92eeb7e92aaa40178bcbaa279a88c748c5b9c9e68913cc678ad9d692e417
+2025-05-14 13:38:21,060 - DEBUG - StringToSign:
+AWS4-HMAC-SHA256
+20250514T080821Z
+20250514/us-east-1/iam/aws4_request
+e03429ace6147cf90484f2fcf928a7786886ca9f773cb82ccdeaf5769a6045b5
+2025-05-14 13:38:21,060 - DEBUG - Signature:
+1136d5e8f131e68a5084d4dd2a84031558cbe1e7e7c92fad210db9ebda6a80c9
+2025-05-14 13:38:21,060 - DEBUG - Event request-created.iam.AddUserToGroup: calling handler <bound method UserAgentString.rebuild_and_replace_user_agent_handler of <botocore.useragent.UserAgentString object at 0x000001E4036D02D0>>
+2025-05-14 13:38:21,061 - DEBUG - Event request-created.iam.AddUserToGroup: calling handler <function add_retry_headers at 0x000001E402D25DA0>
+2025-05-14 13:38:21,061 - DEBUG - Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://iam.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.38.14 md/Botocore#1.38.14 ua/2.1 os/windows#11 md/arch#amd64 lang/python#3.13.3 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.38.14', 'X-Amz-Date': b'20250514T080821Z', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAVVG3FY32KJXVTZMW/20250514/us-east-1/iam/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature=1136d5e8f131e68a5084d4dd2a84031558cbe1e7e7c92fad210db9ebda6a80c9', 'amz-sdk-invocation-id': b'ff729bda-a53d-47f5-add5-709aad9121c0', 'amz-sdk-request': b'attempt=1', 'Content-Length': '76'}>
+2025-05-14 13:38:21,062 - DEBUG - Certificate path: C:\iam-access-control-project\.venv\Lib\site-packages\botocore\cacert.pem
+2025-05-14 13:38:21,561 - DEBUG - https://iam.amazonaws.com:443 "POST / HTTP/1.1" 200 208
+2025-05-14 13:38:21,562 - DEBUG - Response headers: {'Date': 'Wed, 14 May 2025 08:08:21 GMT', 'x-amzn-RequestId': '4a1bbccd-c504-4441-b88d-990b6edf3d05', 'Content-Type': 'text/xml', 'Content-Length': '208'}
+2025-05-14 13:38:21,562 - DEBUG - Response body:
+b'<AddUserToGroupResponse xmlns="https://iam.amazonaws.com/doc/2010-05-08/">\n  <ResponseMetadata>\n    <RequestId>4a1bbccd-c504-4441-b88d-990b6edf3d05</RequestId>\n  </ResponseMetadata>\n</AddUserToGroupResponse>\n'
+2025-05-14 13:38:21,562 - DEBUG - Event needs-retry.iam.AddUserToGroup: calling handler <botocore.retryhandler.RetryHandler object at 0x000001E4036CD2B0>
+2025-05-14 13:38:21,563 - DEBUG - No retry needed.
+2025-05-14 13:38:21,563 - DEBUG - Event after-call.iam.AddUserToGroup: calling handler <function json_decode_policies at 0x000001E402D24680>
+2025-05-14 13:38:21,564 - DEBUG - Event before-parameter-build.iam.CreateLoginProfile: calling handler <function generate_idempotent_uuid at 0x000001E402D039C0>
+2025-05-14 13:38:21,564 - DEBUG - Event before-parameter-build.iam.CreateLoginProfile: calling handler <function _handle_request_validation_mode_member at 0x000001E402D265C0>
+2025-05-14 13:38:21,564 - DEBUG - Calling endpoint provider with parameters: {'UseDualStack': False, 'UseFIPS': False, 'Region': 'aws-global'}
+2025-05-14 13:38:21,564 - DEBUG - Endpoint provider result: https://iam.amazonaws.com
+2025-05-14 13:38:21,564 - DEBUG - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2025-05-14 13:38:21,564 - DEBUG - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1'}
+2025-05-14 13:38:21,565 - DEBUG - Event before-call.iam.CreateLoginProfile: calling handler <function add_recursion_detection_header at 0x000001E402D03560>
+2025-05-14 13:38:21,565 - DEBUG - Event before-call.iam.CreateLoginProfile: calling handler <function add_query_compatibility_header at 0x000001E402D26520>
+2025-05-14 13:38:21,565 - DEBUG - Event before-call.iam.CreateLoginProfile: calling handler <function inject_api_version_header_if_needed at 0x000001E402D254E0>
+2025-05-14 13:38:21,565 - DEBUG - Making request for OperationModel(name=CreateLoginProfile) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.38.14 md/Botocore#1.38.14 ua/2.1 os/windows#11 md/arch#amd64 lang/python#3.13.3 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.38.14'}, 'body': {'Action': 'CreateLoginProfile', 'Version': '2010-05-08', 'UserName': 'Rahul', 'Password': 'TempPass#123', 'PasswordResetRequired': 'true'}, 'url': 'https://iam.amazonaws.com/', 'context': {'client_region': 'aws-global', 'client_config': <botocore.config.Config object at 0x000001E402DD7620>, 'has_streaming_input': False, 'auth_type': 'v4', 'unsigned_payload': None, 'signing': {'region': 'us-east-1'}, 'endpoint_properties': {'authSchemes': [{'name': 'sigv4', 'signingRegion': 'us-east-1'}]}}}
+2025-05-14 13:38:21,566 - DEBUG - Event request-created.iam.CreateLoginProfile: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000001E402DD74D0>>
+2025-05-14 13:38:21,566 - DEBUG - Event choose-signer.iam.CreateLoginProfile: calling handler <function set_operation_specific_signer at 0x000001E402D037E0>
+2025-05-14 13:38:21,567 - DEBUG - Calculating signature using v4 auth.
+2025-05-14 13:38:21,567 - DEBUG - CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:iam.amazonaws.com
+x-amz-date:20250514T080821Z
+
+content-type;host;x-amz-date
+0ce9d54631702c03025cbb457d49f0ae7947b6c021c4602f0ae0ab845c9b5697
+2025-05-14 13:38:21,567 - DEBUG - StringToSign:
+AWS4-HMAC-SHA256
+20250514T080821Z
+20250514/us-east-1/iam/aws4_request
+1c6f34abd3bebc029ffe0de40401896e7c559ecda452cbb97a4da33ca594cf38
+2025-05-14 13:38:21,568 - DEBUG - Signature:
+7fa3ee4e8f775345d67f3ba3feb023eb780b9a31fdaad3538ea98ade2a5a4990
+2025-05-14 13:38:21,568 - DEBUG - Event request-created.iam.CreateLoginProfile: calling handler <bound method UserAgentString.rebuild_and_replace_user_agent_handler of <botocore.useragent.UserAgentString object at 0x000001E4036D02D0>>
+2025-05-14 13:38:21,568 - DEBUG - Event request-created.iam.CreateLoginProfile: calling handler <function add_retry_headers at 0x000001E402D25DA0>
+2025-05-14 13:38:21,570 - DEBUG - Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://iam.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.38.14 md/Botocore#1.38.14 ua/2.1 os/windows#11 md/arch#amd64 lang/python#3.13.3 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.38.14', 'X-Amz-Date': b'20250514T080821Z', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAVVG3FY32KJXVTZMW/20250514/us-east-1/iam/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature=7fa3ee4e8f775345d67f3ba3feb023eb780b9a31fdaad3538ea98ade2a5a4990', 'amz-sdk-invocation-id': b'2aac7308-409e-4b4f-b748-c1feca1450f5', 'amz-sdk-request': b'attempt=1', 'Content-Length': '110'}>
+2025-05-14 13:38:21,571 - DEBUG - Certificate path: C:\iam-access-control-project\.venv\Lib\site-packages\botocore\cacert.pem
+2025-05-14 13:38:22,200 - DEBUG - https://iam.amazonaws.com:443 "POST / HTTP/1.1" 200 457
+2025-05-14 13:38:22,201 - DEBUG - Response headers: {'Date': 'Wed, 14 May 2025 08:08:21 GMT', 'x-amzn-RequestId': '659e5e16-b674-4f8e-80e6-58043614eeba', 'Content-Type': 'text/xml', 'Content-Length': '457'}
+2025-05-14 13:38:22,201 - DEBUG - Response body:
+b'<CreateLoginProfileResponse xmlns="https://iam.amazonaws.com/doc/2010-05-08/">\n  <CreateLoginProfileResult>\n    <LoginProfile>\n      <UserName>Rahul</UserName>\n      <PasswordResetRequired>true</PasswordResetRequired>\n      <CreateDate>2025-05-14T08:08:21Z</CreateDate>\n    </LoginProfile>\n  </CreateLoginProfileResult>\n  <ResponseMetadata>\n    <RequestId>659e5e16-b674-4f8e-80e6-58043614eeba</RequestId>\n  </ResponseMetadata>\n</CreateLoginProfileResponse>\n'
+2025-05-14 13:38:22,203 - DEBUG - Event needs-retry.iam.CreateLoginProfile: calling handler <botocore.retryhandler.RetryHandler object at 0x000001E4036CD2B0>
+2025-05-14 13:38:22,204 - DEBUG - No retry needed.
+2025-05-14 13:38:22,204 - DEBUG - Event after-call.iam.CreateLoginProfile: calling handler <function json_decode_policies at 0x000001E402D24680>
+2025-05-14 13:41:46,527 - DEBUG - Event choose-service-name: calling handler <function handle_service_name_alias at 0x000002202FE427A0>
+2025-05-14 13:41:46,530 - DEBUG - Event creating-client-class.iam: calling handler <function add_generate_presigned_url at 0x000002202FD76B60>
+2025-05-14 13:41:46,530 - DEBUG - Looking for endpoint for iam via: environment_service
+2025-05-14 13:41:46,530 - DEBUG - Looking for endpoint for iam via: environment_global
+2025-05-14 13:41:46,530 - DEBUG - Looking for endpoint for iam via: config_service
+2025-05-14 13:41:46,530 - DEBUG - Looking for endpoint for iam via: config_global
+2025-05-14 13:41:46,530 - DEBUG - No configured endpoint found.
+2025-05-14 13:41:46,532 - DEBUG - Setting iam timeout as (60, 60)
+2025-05-14 13:41:46,535 - DEBUG - Registering retry handlers for service: iam

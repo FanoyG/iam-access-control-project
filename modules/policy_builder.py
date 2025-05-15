@@ -84,7 +84,7 @@ def save_policy_to_file(policy, filename="custom_policy.json"):
     file_path = os.path.join(folder_path, filename)
     with open(file_path, "w") as f:
         json.dump(policy, f, indent=4)
-    print(f"📁 Policy saved to {filename}")
+    print(f"📁 Policy saved to {file_path}")
 
 
 # Inline simulation helper (reuses logic from simulator.py)

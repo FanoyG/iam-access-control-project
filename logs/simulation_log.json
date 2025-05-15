@@ -1,0 +1,9 @@
+[
+    {
+        "timestamp": "2025-05-14T08:10:16.459880Z",
+        "principal_arn": "arn:aws:iam::123456789012:user/test-user",
+        "action": "ec2:StartInstances",
+        "resource": "arn:aws:ec2:region:account-id:instance/i-0abc1234def56789",
+        "decision": "allowed"
+    }
+]
